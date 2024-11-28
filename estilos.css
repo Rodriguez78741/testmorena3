@@ -1,0 +1,249 @@
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    padding-top: 50px;
+}
+
+/* Espaciado en secciones principales */
+.page-section-heading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Proxima Nova', sans-serif;
+    color: #504e4f;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* NavBar */
+.navbar {
+    background-color: #131B20;
+    color: #fff;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Banner */
+#banner {
+    background: linear-gradient(90deg, rgba(185, 212, 247, 0.7) 0%, rgba(162, 192, 237, 0.7) 50%, rgba(140, 172, 227, 0.7) 100%), url(recursos/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner h2{
+    color: #504e4f;
+}
+
+#banner p{
+    color: #504e4f;
+    font-size: 2rem;
+}
+
+/* Sección Recordatorios */
+.recordatorios {
+    background-color: #F7DCB9;
+    padding: 20px 0; /* Padding superior e inferior */
+}
+
+/* Contenedor de Notas */
+.notas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    background: #fdf5e6; /* Fondo estilo pizarrón de corcho */
+    border: 2px solid #d2b48c;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Estilo de las notas */
+.nota {
+    width: 180px;
+    min-height: 180px;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    color: #333;
+}
+
+/* Estilo del pin en las notas */
+.nota .pin {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo del texto dentro de la nota */
+.nota .text {
+    flex: 1;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    overflow-wrap: break-word;
+}
+
+/* Botón para eliminar la nota */
+button.delete-note {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+/* Sección Calificaciones */
+.calificaciones {
+    background-color: #B9D4F7;
+    padding: 20px 0; /* Padding superior e inferior */
+}
+
+/* Cambiar color de las celdas y texto */
+.table thead th {
+    color: #ffffff;  /* Color del texto en los encabezados */
+    background-color: #2c3e50;  /* Color de fondo de los encabezados */
+}
+
+/* Cambiar color de las celdas y texto en el cuerpo de la tabla */
+.table tbody td {
+    color: #34495e;  /* Color del texto en las celdas */
+    background-color: #ecf0f1;  /* Color de fondo de las celdas */
+}
+
+/* Cambiar color de las celdas y texto en el pie de la tabla */
+.table tfoot td {
+    color: #34495e;  /* Color del texto en el pie de la tabla */
+    background-color: #ecf0f1;  /* Color de fondo de las celdas del pie */
+    font-weight: bold;  /* Para resaltar el texto (si es necesario) */
+}
+
+/* Cambiar color de bordes */
+.table, .table th, .table td {
+    border-color: #7f8c8d;  /* Color de los bordes */
+}
+
+/* Cambiar el color de la fila cuando el ratón pasa sobre ella */
+.table tbody tr:hover {
+    background-color: #bdc3c7;  /* Color de fondo al pasar el ratón */
+}
+
+/* Footer */
+.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #131B20;
+    color: #fff;
+}
+
+.footer .footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.footer a {
+    color: #ff7f50;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .page-section-heading {
+        font-size: 24px; /* Reduce el tamaño del texto */
+        padding-top: 10px;
+    }
+
+    .card {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .notas-container {
+        flex-direction: column; /* Apila las notas verticalmente */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .nota {
+        width: 100%; /* Nota ocupa todo el ancho disponible */
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .footer .footer-title {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto del footer */
+    }
+
+    .footer a {
+        font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
+    }
+
+    .table {
+        font-size: 12px; /* Reduce el tamaño del texto */
+    }
+
+    .navbar {
+        padding: 5px 10px; /* Reduce el padding */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    .navbar-brand {
+        font-size: 16px; /* Ajusta el tamaño del logo o texto principal */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Apila los elementos verticalmente si es necesario */
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 5px; /* Añade espacio entre enlaces */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustar el texto del footer al centro en pantallas pequeñas */
+    .footer .row {
+        text-align: center;
+    }
+
+    /* Asegurarse de que las columnas en el footer tengan margen en pantallas pequeñas */
+    .footer .col-12 {
+        margin-bottom: 1rem;
+    }
+
+    /* Añadir padding extra para mantener las secciones separadas */
+    .recordatorios, .calificaciones {
+        padding: 20px;  /* Padding adicional en pantallas pequeñas */
+    }
+
+    body {
+        padding-top: 0px;
+    }
+} 
