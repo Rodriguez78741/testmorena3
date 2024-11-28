@@ -37,7 +37,7 @@ body {
 
 /* Banner */
 #banner {
-    background: linear-gradient(90deg, rgba(185, 212, 247, 0.7) 0%, rgba(162, 192, 237, 0.7) 50%, rgba(140, 172, 227, 0.7) 100%), url(/recursos/banner.png);
+    background: linear-gradient(90deg, rgba(185, 212, 247, 0.7) 0%, rgba(162, 192, 237, 0.7) 50%, rgba(140, 172, 227, 0.7) 100%), url(recursos/banner.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
