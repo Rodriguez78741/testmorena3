@@ -156,7 +156,7 @@ document.getElementById('infoLink').addEventListener('click', function(event) {
     event.preventDefault(); // Evitar la navegación
 
     // Usamos fetch para obtener el archivo de texto
-    fetch('/documentos/datos.txt')
+    fetch('documentos/datos.txt')
         .then(response => response.text())
         .then(data => {
             // Colocamos el contenido del archivo en el modal
