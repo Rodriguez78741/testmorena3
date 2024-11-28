@@ -1,0 +1,7 @@
+La app “Seguidor de Carrera” está diseñada para que los estudiantes universitarios puedan organizarse con su carrera de manera sencilla. 
+
+Permite registrar materias e ingresar las calificaciones de parciales y finales, 
+calculando automáticamente los promedios finales para ofrecer un resumen claro del desempeño académico. 
+
+La información se presenta en tablas intuitivas que muestran materias, notas y opciones rápidas como eliminar registros, 
+lo que garantiza una experiencia fácil de usar y accesible para todos.

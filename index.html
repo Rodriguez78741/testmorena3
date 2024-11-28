@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Seguidor de Carrera</title>
+        <!-- Icono -->
+        <link rel="icon" type="image/x-icon" href="recursos/icono.ico"/>
+        <!-- Google Fonts, Fuente Poppins y Proxima Nova -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Tema principal CSS-->
+        <link rel="stylesheet" href="/css/estilos.css">
+    </head>
+
+    <body id="paginaPrincipal">
+
+        <!-- Navbar de Boostrap-->
+        <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="navbarPrincipal">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#paginaPrincipal">Seguidor de Carrera</a>
+                <button class="navbar-toggler text-white text-uppercase font-weight-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-white py-3 px-0 px-lg-3 rounded" href="#notas">Recordatorios</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-white py-3 px-0 px-lg-3 rounded" href="#calificaciones">Calificaciones</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link text-white py-3 px-0 px-lg-3 rounded" href="#informacion">Acerca De</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección del Banner -->
+        <section id="banner" class="container-fluid px-4 text-white vh-100 d-flex align-items-center">
+            <div class="row mx-auto">
+              <div class="col-12 col-lg-10 mx-auto">
+                <h2 class="display-1 text-uppercase fw-bold text-center">Seguidor de Carrera</h2>
+                <p class="fs-6 fw-bold py-2 text-center mx-auto">Ayudante para el segumiento de la carrera universitaria.
+                    <br> <a href="#notas" class="text-color btn btn-outline-secondary fw-bold rounded my-4 col-6 mx-auto">Empezar a tomar notas.</a>
+                </p>
+              </div>
+            </div>
+        </section>
+
+        <!-- Sección Recordatorios -->
+        <section class="page-section recordatorios" id="notas">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-color mb-0">Recordatorios</h2>
+                <div class="card">
+                    <div id="marco" class="notas-container"></div>
+                    <button id="btnAgregarNotas" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#agregarNotasModal">
+                        Agregar Nota
+                    </button>
+                </div>          
+            </div>
+        </section>
+
+        <!-- Sección Calificaciones -->
+        <section class="page-section calificaciones" id="calificaciones">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-color mb-0">Calificaciones</h2>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Materia</th>
+                                    <th>Nota Parcial 1</th>
+                                    <th>Nota Parcial 2</th>
+                                    <th>Nota Final</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calificacionesCuerpo">
+                                <!-- Las filas dinámicas se agregarán aquí -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-end fw-bold">Promedio de Nota Final:</td>
+                                    <td id="promedioFinal">0.00</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <button class="btn btn-primary mb-3" id="btnAgregarCalificacion" data-bs-toggle="modal" data-bs-target="#calificacionesModal">
+                        Agregar Calificación
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer text-center" id="informacion">
+            <div class="container">
+                <div class="row">
+                    <!-- Acerca de: Alineado a la izquierda -->
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <h4 class="footer-title">Acerca De</h4>
+                        <p>Proyecto hecho usando JavaScript, CSS, HTML, y Bootstrap para la materia diseño y programación web I.</p>
+                    </div>
+                    
+                    <!-- Información: Alineado a la derecha -->
+                    <div class="col-12 col-md-6">
+                        <h4 class="footer-title">Información</h4>
+                        <p>Este proyecto fue creado por Abregu, Morena. Para más info, haga click 
+                            <a href="#" id="infoLink" data-bs-toggle="modal" data-bs-target="#infoModal">aquí</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Instalador de Boostrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+        <!-- Modal para agregar notas -->
+        <div class="modal fade" id="agregarNotasModal" tabindex="-1" aria-labelledby="agregarNotasModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="agregarNotasModalLabel">Agregar Nota</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="notasForm">
+                            <div class="mb-3">
+                                <label for="notaTitulo" class="form-label">Título</label>
+                                <input type="text" id="notaTitulo" class="form-control" placeholder="Ingrese el título de la nota" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notaDescripcion" class="form-label">Descripción</label>
+                                <textarea id="notaDescripcion" class="form-control" rows="3" placeholder="Ingrese la descripción" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notaColor" class="form-label">Color de la nota</label>
+                                <input type="color" id="notaColor" class="form-control form-control-color" value="#f0f8ff" title="Elige el color de la nota">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pinColor" class="form-label">Color del pin</label>
+                                <input type="color" id="pinColor" class="form-control form-control-color" value="#ff0000" title="Elige el color del pin">
+                            </div>
+                            <button type="submit" class="btn btn-success">Guardar Nota</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para agregar Calificaciones-->
+        <div class="modal fade" id="calificacionesModal" tabindex="-1" aria-labelledby="calificacionesModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="calificacionesModalLabel">Agregar Calificación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="calificacionForm">
+                            <div class="mb-3">
+                                <label for="materia" class="form-label">Materia</label>
+                                <input type="text" class="form-control" id="materia" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notaParcial1" class="form-label">Nota Parcial 1</label>
+                                <input type="number" class="form-control" id="notaParcial1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="notaParcial2" class="form-label">Nota Parcial 2</label>
+                                <input type="number" class="form-control" id="notaParcial2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="notaFinal" class="form-label">Nota Final</label>
+                                <input type="number" class="form-control" id="notaFinal">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardarCalificacion">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Información -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">Información del Proyecto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <pre id="txtData"></pre>
+                        <img src="recursos/fotoPerfil.jpg" alt="Foto de Perfil" class="img-fluid mt-3" style="max-height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- JavaScript a usar en el proyecto-->
+        <script src="/js/main.js"></script>
+    </body>
+</html>
